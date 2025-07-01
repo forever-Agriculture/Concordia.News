@@ -1,0 +1,16 @@
+# Configuration for time-related settings
+collection:
+  # Hours to look back when collecting articles (from current time in UTC)
+  # Note: All timestamps are converted to UTC for comparison
+  lookback_hours: 2.25  # 2 hours and 15 minutes
+
+analysis:
+  # Strategy for determining the target date for analysis relative to when the script runs.
+  # 'current_day': Analyzes articles published on the *same* UTC date the script starts.
+  #                Use this when the script runs late in the evening (e.g., 23:30 UTC).
+  # 'previous_day': Analyzes articles published on the UTC date *before* the script starts.
+  #                 Use this when the script runs after midnight (e.g., 00:05 UTC).
+  target_day: "current_day" # Options: "current_day", "previous_day"
+
+timezone: UTC
+date_format: "%Y-%m-%d %H:%M:%S"

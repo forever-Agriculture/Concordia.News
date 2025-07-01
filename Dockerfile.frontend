@@ -1,0 +1,28 @@
+# Build stage
+FROM node:18-alpine as build
+
+WORKDIR /app
+
+# Copy environment config first
+COPY config/environment.js ./config/
+
+# Copy frontend files
+COPY frontend/package*.json ./
+RUN npm install
+
+COPY frontend/ ./
+
+# Build the app
+RUN npm run build
+
+# If production, fix hardcoded URLs
+RUN if grep -q "const ENV = 'production'" config/environment.js; then \
+    echo "Fixing API URLs for production..." && \
+    find /app/dist -type f -name "*.js" -exec sed -i 's|http://localhost:8000|/api|g' {} \; ; \
+    fi
+
+# Nginx stage
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"] 

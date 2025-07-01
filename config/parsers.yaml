@@ -1,0 +1,275 @@
+# config/parsers.yaml
+parsers:
+  - name: "fox_news"
+    class: "FoxParser"
+    module: "parsers.fox_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 1
+      max_delay: 30
+    feeds:
+      - name: "world"
+        url: "https://moxie.foxnews.com/google-publisher/world.xml"
+        priority: 1
+      - name: "politics"
+        url: "https://moxie.foxnews.com/google-publisher/politics.xml"
+        priority: 2
+      - name: "us"
+        url: "https://moxie.foxnews.com/google-publisher/us.xml"
+        priority: 3
+      # - name: "top"
+      #   url: "https://moxie.foxnews.com/google-publisher/latest.xml"
+      #   priority: 4
+      - name: "business"
+        url: "http://feeds.foxnews.com/foxnews/business"
+        priority: 5
+      - name: "opinion"
+        url: "http://feeds.foxnews.com/foxnews/opinion"
+        priority: 6
+
+  - name: "bbc"
+    class: "BBCParser"
+    module: "parsers.bbc_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 20
+    feeds:
+      - name: "world"
+        url: "http://feeds.bbci.co.uk/news/world/rss.xml"
+        priority: 1
+      - name: "politics"
+        url: "http://feeds.bbci.co.uk/news/politics/rss.xml"
+        priority: 2
+      - name: "uk"
+        url: "https://feeds.bbci.co.uk/news/uk/rss.xml"
+        priority: 3
+      - name: "top"
+        url: "http://feeds.bbci.co.uk/news/rss.xml"
+        priority: 4
+      - name: "business"
+        url: "http://feeds.bbci.co.uk/news/business/rss.xml"
+        priority: 5
+
+  - name: "nbc"
+    class: "NBCParser"
+    module: "parsers.nbc_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "world"
+        url: "https://feeds.nbcnews.com/nbcnews/public/world"
+        priority: 1
+      - name: "politics"
+        url: "https://feeds.nbcnews.com/nbcnews/public/politics"
+        priority: 2
+      - name: "top"
+        url: "https://feeds.nbcnews.com/nbcnews/public/news"
+        priority: 3
+      - name: "business"
+        url: "http://feeds.nbcnews.com/feeds/business"
+        priority: 4
+
+  - name: "dw"
+    class: "DWParser"
+    module: "parsers.dw_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "top"
+        url: "https://rss.dw.com/rdf/rss-en-top"
+        priority: 1
+      - name: "world"
+        url: "https://rss.dw.com/rdf/rss-en-world"
+        priority: 2
+      - name: "eu"
+        url: "https://rss.dw.com/rdf/rss-en-eu"
+        priority: 3
+      - name: "germany"
+        url: "https://rss.dw.com/rdf/rss-en-ger"
+        priority: 4
+      - name: "business"
+        url: "https://rss.dw.com/rdf/rss-en-bus"
+        priority: 5
+      - name: "asia"
+        url: "https://rss.dw.com/rdf/rss-en-asia"
+        priority: 6
+      - name: "culture"
+        url: "https://rss.dw.com/rdf/rss-en-cul"
+        priority: 7
+
+  - name: "france"
+    class: "France24Parser"
+    module: "parsers.france24_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "top"
+        url: "https://www.france24.com/en/rss"
+        priority: 1
+      - name: "europe"
+        url: "https://www.france24.com/en/europe/rss"
+        priority: 2
+      - name: "americas"
+        url: "https://www.france24.com/en/americas/rss"
+      - name: "middle_east"
+        url: "https://www.france24.com/en/middle-east/rss"
+        priority: 3
+      - name: "asia"
+        url: "https://www.france24.com/en/asia-pacific/rss"
+        priority: 4
+      - name: "business"
+        url: "https://www.france24.com/en/business-tech/rss"
+        priority: 5
+      - name: "france"
+        url: "https://www.france24.com/en/france/rss"
+        priority: 6
+
+  - name: "new_york_times"
+    class: "NYTParser"
+    module: "parsers.nyt_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      # - name: "top"
+      #   url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+      #   priority: 1
+      - name: "world"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+        priority: 2
+      - name: "us"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/US.xml"
+        priority: 3
+      - name: "business"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml"
+        priority: 4
+      - name: "economy"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"
+        priority: 5
+      - name: "politics"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+        priority: 6
+      - name: "opinion"
+        url: "https://rss.nytimes.com/services/xml/rss/nyt/Opinion.xml"
+        priority: 7
+
+  - name: "financial_times"
+    class: "FTParser"
+    module: "parsers.ft_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "world"
+        url: "https://www.ft.com/world?format=rss"
+        priority: 1
+      - name: "uk"
+        url: "https://www.ft.com/uk?format=rss"
+        priority: 2
+      - name: "europe"
+        url: "https://www.ft.com/europe?format=rss"
+        priority: 3
+      - name: "markets"
+        url: "https://www.ft.com/markets?format=rss"
+        priority: 4
+      - name: "opinion"
+        url: "https://www.ft.com/comment?format=rss"
+        priority: 5
+      # - name: "asia"
+      #   url: "https://www.ft.com/asia-pacific?format=rss"
+      #   priority: 6
+      - name: "us"
+        url: "https://www.ft.com/us?format=rss"
+        priority: 7
+      # - name: "middle_east"
+      #   url: "https://www.ft.com/middle-east?format=rss"
+      #   priority: 8
+      # - name: "africa"
+      #   url: "https://www.ft.com/africa?format=rss"
+      #   priority: 9
+
+  - name: "wsj" # Wall Street Journal
+    class: "WSJParser"
+    module: "parsers.wsj_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "opinion"
+        url: "https://feeds.content.dowjones.io/public/rss/RSSOpinion"
+        priority: 1
+      - name: "world"
+        url: "https://feeds.content.dowjones.io/public/rss/RSSWorldNews"
+        priority: 2
+      - name: "politics"
+        url: "https://feeds.content.dowjones.io/public/rss/socialpoliticsfeed"
+        priority: 3
+      - name: "economy"
+        url: "https://feeds.content.dowjones.io/public/rss/socialeconomyfeed"
+        priority: 4
+      - name: "markets"
+        url: "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain"
+        priority: 5
+      - name: "us"
+        url: "https://feeds.content.dowjones.io/public/rss/RSSUSnews"
+        priority: 6
+
+  - name: "christian_post"
+    class: "ChristianPostParser"
+    module: "parsers.christianpost_parser"
+    enabled: true
+    retry_policy:
+      max_attempts: 3
+      min_delay: 2
+      max_delay: 25
+    feeds:
+      - name: "world"
+        url: "https://www.christianpost.com/category/world/rss"
+        priority: 1
+      - name: "politics"
+        url: "https://www.christianpost.com/category/politics/rss"
+        priority: 2
+      - name: "us"
+        url: "https://www.christianpost.com/category/us/rss"
+        priority: 3
+      - name: "opinion"
+        url: "https://www.christianpost.com/opinion/rss"
+        priority: 4
+      - name: "business"
+        url: "https://www.christianpost.com/category/business/rss"
+        priority: 5
+      - name: "church-ministries"
+        url: "https://www.christianpost.com/category/church-ministries/rss"
+        priority: 6
+
+  # block our collection with 403 Forbidden error
+  # - name: "daily_wire"
+  #   class: "DailyWireParser"
+  #   module: "parsers.dailywire_parser"
+  #   enabled: true
+  #   retry_policy:
+  #     max_attempts: 3
+  #     min_delay: 2
+  #     max_delay: 25
+  #   feeds:
+  #     - name: "top"
+  #       url: "https://www.dailywire.com/feeds/rss.xml"
+  #       priority: 1

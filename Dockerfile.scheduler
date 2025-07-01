@@ -1,0 +1,36 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system utilities for monitoring
+RUN apt-get update && apt-get install -y \
+    procps \
+    sysstat \
+    htop \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p data logs
+
+# Set up log rotation
+RUN echo "/app/logs/*.log {\n\
+    daily\n\
+    rotate 7\n\
+    compress\n\
+    delaycompress\n\
+    missingok\n\
+    notifempty\n\
+    create 0640 root root\n\
+    }" > /etc/logrotate.d/concordia
+
+# Command to run the scheduler (using a shell script)
+COPY scripts/run_scheduler.sh /app/
+RUN chmod +x /app/run_scheduler.sh
+CMD ["/app/run_scheduler.sh"] 

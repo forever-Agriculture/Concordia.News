@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#3730a3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" stroke="white" stroke-width="1"/>
+  
+  <!-- Balance/scale concept - represents fairness in media analysis -->
+  <path d="M50,20 L50,80" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30,30 L70,30" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Left scale - represents left media -->
+  <circle cx="30" cy="40" r="10" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="30" cy="40" r="5" fill="#f87171"/>
+  
+  <!-- Right scale - represents right media -->
+  <circle cx="70" cy="40" r="10" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="70" cy="40" r="5" fill="#60a5fa"/>
+  
+  <!-- Center/neutral indicator -->
+  <circle cx="50" cy="60" r="10" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="50" cy="60" r="5" fill="#fbbf24"/>
+</svg> 

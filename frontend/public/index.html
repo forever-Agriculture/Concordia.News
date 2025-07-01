@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Simplified favicon approach -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Concordia: Harmony in the Noise - Analyzing media bias and narratives across the political spectrum" />
+    <meta name="theme-color" content="#4338ca" />
+    <title>Concordia (Beta) | Harmony in the Noise</title>
+    <script>
+        // Immediately set dark mode to prevent flickering
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+
+        // Force the document title to be set correctly
+        document.title = "Concordia | Harmony in the Noise";
+    </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

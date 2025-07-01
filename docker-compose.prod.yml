@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    # Don't expose API directly in production
+    ports: []
+
+  frontend:
+    build:
+      args:
+        - NODE_ENV=production
+    ports:
+      - "8080:80" # Map to 8080 for Nginx proxy 

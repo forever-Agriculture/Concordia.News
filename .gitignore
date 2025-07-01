@@ -1,0 +1,65 @@
+# Python
+venv/
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Data files
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/*.db-journal
+*.db-journal
+*.db
+*.db-shm
+*.db-wal
+# Keep the data directory itself
+!data/.gitkeep
+
+# Logs
+logs/*.log
+# Keep the logs directory itself
+!logs/.gitkeep
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Test related
+htmlcov/
+.coverage
+coverage/
+.pytest_cache/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup.cursor/
